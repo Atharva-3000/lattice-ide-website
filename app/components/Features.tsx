@@ -1,9 +1,8 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Code, Layers, Zap, Globe, PenToolIcon as Tool, Cpu } from 'lucide-react'
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
-import { useEffect } from 'react'
 
 const features = [
   { icon: Code, title: "Multi-Language Support", description: "Develop with AssemblyScript, Move, and Kotlin" },
@@ -45,14 +44,14 @@ const FeatureItem = ({ feature, index }) => {
         opacity: hasAnimated ? 1 : opacity, 
         x: hasAnimated ? 0 : x 
       }}
-      className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} bg-[#0F1218] rounded-xl p-8 border border-[#213147] hover:border-[#28A0F0] transition-all duration-300 transform hover:scale-105 hover:shadow-lg mb-12`}
+      className="flex flex-col md:flex-row items-center bg-[#0F1218] rounded-xl p-8 border border-[#213147] hover:border-[#28A0F0] transition-all duration-300 transform hover:scale-105 hover:shadow-lg mb-12"
     >
-      <div className={`flex-1 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+      <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-8">
+        <feature.icon className="w-12 h-12 text-[#28A0F0]" />
+      </div>
+      <div className="flex-1">
         <h3 className="text-2xl font-semibold mb-4 text-white">{feature.title}</h3>
         <p className="text-gray-400">{feature.description}</p>
-      </div>
-      <div className={`flex-shrink-0 ${index % 2 === 0 ? 'order-first' : 'order-last'}`}>
-        <feature.icon className="w-16 h-16 text-[#28A0F0]" />
       </div>
     </motion.div>
   )
@@ -70,7 +69,7 @@ export default function Features() {
         >
           Powerful Features
         </motion.h2>
-        <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <FeatureItem key={index} feature={feature} index={index} />
           ))}
@@ -79,4 +78,3 @@ export default function Features() {
     </section>
   )
 }
-

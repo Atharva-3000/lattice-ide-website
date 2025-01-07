@@ -34,11 +34,13 @@ export default function Timeline() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`mb-12 flex items-center ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}
+              className={`mb-12 flex items-center justify-center ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}
             >
-              <div className={`w-1/2 ${index % 2 === 0 ? 'pl-8' : 'pr-8'} ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                <h3 className="text-xl font-semibold mb-2 text-[#28A0F0]">{item.title}</h3>
-                <p className="text-gray-400">{item.description}</p>
+              <div className={`w-1/2 flex ${index % 2 === 0 ? 'justify-start pl-4' : 'justify-end pr-4'}`}>
+                <div className={`${index % 2 === 0 ? 'text-left' : 'text-right'}`}>
+                  <h3 className="text-xl font-semibold mb-2 text-[#28A0F0]">{item.title}</h3>
+                  <p className="text-gray-400 hidden md:block">{item.description}</p>
+                </div>
               </div>
               <div className="flex-shrink-0 w-12 h-12 rounded-full border-4 border-[#28A0F0] bg-[#0A0B0E] flex items-center justify-center z-10">
                 {item.completed ? (
@@ -47,7 +49,7 @@ export default function Timeline() {
                   <div className="w-4 h-4 rounded-full bg-gray-400" />
                 )}
               </div>
-              <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`} />
+              <div className="w-1/2" />
             </motion.div>
           ))}
         </div>

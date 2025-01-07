@@ -31,7 +31,7 @@ export default function Hero() {
       </motion.div>
       <motion.div style={{ opacity }} className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -39,7 +39,7 @@ export default function Hero() {
           >
             Lattice <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#28A0F0] to-[#0B3794]">IDE</span>
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -47,17 +47,17 @@ export default function Hero() {
           >
             Revolutionize your Arbitrum development with our cutting-edge, multi-language IDE platform
           </motion.p>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="space-x-4"
+            className="flex flex-col gap-4 sm:flex-row sm:gap-6"
           >
             <Link href="#features" className="bg-gradient-to-r from-[#28A0F0] to-[#0B3794] text-white px-8 py-3 rounded-full font-bold hover:opacity-90 transition duration-300 inline-block">
               Explore Features
             </Link>
             <Link href="#contact" className="border border-[#28A0F0] text-[#28A0F0] px-8 py-3 rounded-full font-bold hover:bg-[#28A0F0] hover:text-white transition duration-300 inline-block">
-             Coming Soon ...
+              Coming Soon ...
             </Link>
           </motion.div>
         </div>
@@ -65,4 +65,3 @@ export default function Hero() {
     </section>
   )
 }
-
