@@ -71,6 +71,7 @@ export default function Footer() {
                 name="name"
                 placeholder="Your name"
                 className="w-full p-4 bg-[#1A1D24] border border-[#213147] rounded-lg focus:outline-none focus:border-[#28A0F0]"
+                required
               />
             </div>
             <div>
@@ -79,6 +80,7 @@ export default function Footer() {
                 name="email"
                 placeholder="Your email"
                 className="w-full p-4 bg-[#1A1D24] border border-[#213147] rounded-lg focus:outline-none focus:border-[#28A0F0]"
+                required
               />
             </div>
             <div>
@@ -87,6 +89,7 @@ export default function Footer() {
                 placeholder="Your message"
                 rows={5}
                 className="w-full p-4 bg-[#1A1D24] border border-[#213147] rounded-lg focus:outline-none focus:border-[#28A0F0]"
+                required
               />
             </div>
             <button
