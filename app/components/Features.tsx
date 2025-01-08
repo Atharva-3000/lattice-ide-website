@@ -13,7 +13,7 @@ const features = [
   { icon: Cpu, title: "WASM Compatibility", description: "Optimized for WebAssembly performance" },
 ]
 
-const FeatureItem = ({ feature, index }) => {
+const FeatureItem = ({ feature, index }: { feature: typeof features[0], index: number }) => {
   const ref = useRef(null)
   const [hasAnimated, setHasAnimated] = useState(false)
   const { scrollYProgress } = useScroll({
@@ -29,7 +29,7 @@ const FeatureItem = ({ feature, index }) => {
   )
 
   useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange(v => {
+    const unsubscribe = scrollYProgress.on("change", (v) => {
       if (v > 0.5 && !hasAnimated) {
         setHasAnimated(true)
       }
@@ -44,7 +44,7 @@ const FeatureItem = ({ feature, index }) => {
         opacity: hasAnimated ? 1 : opacity, 
         x: hasAnimated ? 0 : x 
       }}
-      className="flex flex-col md:flex-row items-center bg-[#0F1218] rounded-xl p-8 border border-[#213147] hover:border-[#28A0F0] transition-all duration-300 transform hover:scale-105 hover:shadow-lg mb-12"
+      className="flex flex-col md:flex-row items-center bg-[#0F1218] rounded-xl p-8 border border-[#213147] hover:border-[#28A0F0] transition-all duration-300 transform hover:scale-105 hover:shadow-lg mb-12 relative"
     >
       <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-8">
         <feature.icon className="w-12 h-12 text-[#28A0F0]" />
