@@ -51,7 +51,7 @@ export default function Footer() {
       id="contact"
       className="bg-[#0F1218] text-white py-20 border-t border-[#213147]"
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 ">
         <div
           className="mx-auto w-full md:w-[40%] bg-[#000000] p-6 rounded-lg"
           style={{ textAlign: "center" }}
@@ -60,7 +60,7 @@ export default function Footer() {
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#28A0F0] to-[#0B3794]"
+            className="text-4xl font-bold text-center mb-14 bg-clip-text text-transparent bg-gradient-to-r from-[#28A0F0] to-[#0B3794]"
           >
             Contact Us
           </motion.h2>
@@ -135,6 +135,17 @@ export default function Footer() {
               )}
             </button>
           </form>
+        </div>
+        <div className="items-center justify-center text-center pt-6">
+          Made with ❤️ by{" "}
+          <a
+            href="https://x.com/0x_atharva"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#28A0F0] hover:underline"
+          >
+            0x_Atharva
+          </a>
         </div>
       </div>
       <Toaster />

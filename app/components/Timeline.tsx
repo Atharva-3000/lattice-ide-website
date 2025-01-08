@@ -16,7 +16,7 @@ const timelineItems = [
 
 export default function Timeline() {
   return (
-    <section id="timeline" className="py-20 bg-[#0F1218]">
+    <section id="timeline" className="pt-20 pb-8 bg-[#0F1218]">
       <div className="container mx-auto px-6">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}

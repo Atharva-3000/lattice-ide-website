@@ -18,8 +18,15 @@ export default function Header() {
     return () => window.removeEventListener('resize', handleResize)
   }, [isOpen])
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     setIsOpen(false)
+    if (href === '/') {
+      e.preventDefault()
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
   }
 
   return (
@@ -35,12 +42,18 @@ export default function Header() {
             className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#28A0F0] to-[#0B3794]"
             whileHover={{ scale: 1.05 }}
           >
-            Lattice IDE
+            <Link  href="/" onClick={(e) => handleLinkClick(e, '/')}>
+              Lattice IDE
+            </Link>
           </motion.div>
           <div className="hidden md:flex space-x-8">
             {['Home', 'Features', 'Timeline', 'Contact'].map((item) => (
               <motion.div key={item} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                <Link href={item === 'Home' ? '/' : `#${item.toLowerCase()}`} className="text-gray-300 hover:text-[#28A0F0] transition-colors">
+                <Link 
+                  href={item === 'Home' ? '/' : `#${item.toLowerCase()}`} 
+                  onClick={(e) => item === 'Home' ? handleLinkClick(e, '/') : handleLinkClick(e, `#${item.toLowerCase()}`)} 
+                  className="text-gray-300 hover:text-[#28A0F0] transition-colors"
+                >
                   {item}
                 </Link>
               </motion.div>
@@ -83,8 +96,8 @@ export default function Header() {
                   <Link 
                     key={item} 
                     href={item === 'Home' ? '/' : `#${item.toLowerCase()}`} 
+                    onClick={(e) => item === 'Home' ? handleLinkClick(e, '/') : handleLinkClick(e, `#${item.toLowerCase()}`)} 
                     className="block py-2 px-4 text-sm text-gray-300 hover:text-[#28A0F0] hover:bg-[#213147] rounded transition-colors"
-                    onClick={handleLinkClick}
                   >
                     {item}
                   </Link>
@@ -97,4 +110,3 @@ export default function Header() {
     </motion.header>
   )
 }
-
