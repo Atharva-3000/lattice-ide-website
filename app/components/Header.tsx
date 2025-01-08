@@ -47,7 +47,7 @@ export default function Header() {
             </Link>
           </motion.div>
           <div className="hidden md:flex space-x-8">
-            {['Home', 'Features', 'Timeline', 'Contact'].map((item) => (
+            {['Home', 'Why' ,'Features', 'Timeline', 'Contact'].map((item) => (
               <motion.div key={item} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                 <Link 
                   href={item === 'Home' ? '/' : `#${item.toLowerCase()}`} 
@@ -92,7 +92,7 @@ export default function Header() {
               className="md:hidden mt-4 overflow-hidden"
             >
               <div className="space-y-2">
-                {['Home', 'Features', 'Timeline', 'Contact'].map((item) => (
+                {['Home', 'Why' ,'Features', 'Timeline', 'Contact'].map((item) => (
                   <Link 
                     key={item} 
                     href={item === 'Home' ? '/' : `#${item.toLowerCase()}`} 

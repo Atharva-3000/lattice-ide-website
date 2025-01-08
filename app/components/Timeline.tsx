@@ -4,9 +4,10 @@ import { CheckCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const timelineItems = [
-  { title: "Language Support", description: "Developing WASM compatible Language SDKs (AssemblyScript, Move, Kotlin)", completed: true },
-  { title: "SDK Development", description: "Creating SDKs for ERC-20, ERC-721, and ERC-1155 smart contracts", completed: true },
-  { title: "IDE Support", description: "Building an IDE with support for all Arbitrum chains and developed languages", completed: true },
+  { title: "AssemblyScript Support", description: "Developing SDKs for compatibility with AssemblyScript", completed: true },
+  { title: "Move Support", description: "Developing SDKs for compatibility with Move", completed: false },
+  { title: "Kotlin Support", description: "Developing SDK's for compatibility with Kotlin", completed: false }, { title: "Smart Contract Development", description: "Creating smart contracts for ERC-20, ERC-721, and ERC-1155", completed: false },
+  { title: "IDE Support", description: "Building an IDE with support for all Arbitrum chains and developed languages", completed: false },
   { title: "Automation Integration", description: "Implementing no-code automation features similar to n8n", completed: false },
   { title: "Resource Integration", description: "Integrating existing resources for immediate development start", completed: false },
   { title: "SDK Launch", description: "Releasing initial SDKs for developer use and feedback", completed: false },

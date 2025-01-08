@@ -139,17 +139,13 @@ export default function Footer() {
             </button>
           </form>
         </div>
-        <div className="items-center justify-center text-center pt-6">
-          Made with ❤️ by{" "}
-          <a
-            href="https://x.com/0x_atharva"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#28A0F0] hover:underline"
-          >
-            0x_Atharva
-          </a>
-        </div>
+        <div className="mt-12 pt-8 border-t border-[#213147] w-full">
+              <div className="container mx-auto px-6">
+                <p className="text-gray-400 text-sm text-center">
+                  &copy; 2025 Lattice IDE. All rights reserved.
+                </p>
+              </div>
+            </div>
       </div>
       <Toaster />
     </footer>
