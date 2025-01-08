@@ -4,9 +4,9 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 const whyReasons = [
-  { number: "01", title: "Arbitrum Ecosystem", content: "Aims to provide a platform for developers to build applications on the Arbitrum Ecosystem, with less hassle." },
-  { number: "02", title: "Extended SDK Support", content: "Comes OOTB with support for languages like AssemblyScript, Move, and Kotlin, and also has a built-in support for ERC-20, ERC-721, and ERC-1155 smart contracts." },
-  { number: "03", title: "Automation", content: "Bundled with n8n like automation features, with drag and drop capabilities, making it easy to build applications with minimal coding." }
+  { number: "01", title: "Supports All Arbitrum Chains", content: "Build applications seamlessly on any Arbitrum Chain without setup complexity." },
+  { number: "02", title: "Designed for Specific Needs", content: "Tailored for Arbitrum developers with focus on superior development experience." },
+  { number: "03", title: "Extended Language Support at the Core", content: "Built to support multiple programming languages optimized for Arbitrum development with in-house developed SDKs" }
 ]
 
 const WhyReason = ({ reason, index }: { reason: typeof whyReasons[0], index: number }) => {
